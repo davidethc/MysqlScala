@@ -43,3 +43,41 @@ VALUES
     ('Ana Gomez', 'ana.gomez@gmail.com'),
     ('Luis Torres', 'luis.torres@gmail.com');
 ```
+<img width="718" alt="image" src="https://github.com/user-attachments/assets/ef5ff3e7-fc4e-435a-a40b-69b70941e6ed" />
+```scala
+import java.sql.{Connection, DriverManager, ResultSet}
+
+object MySQLConnection {
+  def main(args: Array[String]): Unit = {
+
+    val url = "jdbc:mysql://localhost:3306/test_db"
+    val user = "root"
+    val password = "Susanthc123"
+
+    // Estableciendo la conexión
+    var connection: Connection = null
+    try {
+      connection = DriverManager.getConnection(url, user, password)
+      println("Conexión exitosa a la base de datos.")
+
+
+      val statement = connection.createStatement()
+      val resultSet: ResultSet = statement.executeQuery("SELECT * FROM usuarios")
+
+      // Imprimir resultados
+      while (resultSet.next()) {
+        val id = resultSet.getInt("id")
+        val nombre = resultSet.getString("nombre")
+        val correo = resultSet.getString("correo")
+        println(s"ID: $id, Nombre: $nombre, Correo: $correo")
+      }
+    } catch {
+      case e: Exception => e.printStackTrace()
+    } finally {
+      if (connection != null) connection.close()
+    }
+  }
+}
+
+```
+<img width="1310" alt="image" src="https://github.com/user-attachments/assets/5ecb8eec-d144-4ae2-834a-13d4d311440a" />
