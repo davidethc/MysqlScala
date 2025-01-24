@@ -43,7 +43,12 @@ VALUES
     ('Ana Gomez', 'ana.gomez@gmail.com'),
     ('Luis Torres', 'luis.torres@gmail.com');
 ```
+
+
+
 <img width="718" alt="image" src="https://github.com/user-attachments/assets/ef5ff3e7-fc4e-435a-a40b-69b70941e6ed" />
+
+
 ```scala
 import java.sql.{Connection, DriverManager, ResultSet}
 
@@ -80,4 +85,6 @@ object MySQLConnection {
 }
 
 ```
-<img width="1310" alt="image" src="https://github.com/user-attachments/assets/5ecb8eec-d144-4ae2-834a-13d4d311440a" />
+
+
+<img width="1363" alt="image" src="https://github.com/user-attachments/assets/002064d3-c0f3-4909-9d88-31dd3485fb44" />
